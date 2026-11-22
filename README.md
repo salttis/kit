@@ -6,7 +6,7 @@ Työkalujen yhteinen Go-kirjasto (`github.com/salttis/veska`). Sisältää vain 
 | --- | --- |
 | `buildinfo` | Versio, commit, build-aika ja sopimusversio (ldflags) |
 | `output` | JSON-kirjekuori `{"schemaVersion":1,"data":...}` ja virhe |
-| `contextfile` | Sontsan kontekstitiedosto (`SONTSA_CONTEXT_FILE`) |
+| `contextfile` | Jakarin kontekstitiedosto (`JAKARI_CONTEXT_FILE`) |
 | `config` | Asetus- ja välimuistipolut, tiukka TOML-luku |
 | `logx` | `log/slog`-lokittaja (stderr, warn; `--verbose` = debug) |
 | `ui` | Yhteinen Lip Gloss -teema |

@@ -12,7 +12,7 @@ import (
 	"runtime/debug"
 )
 
-// ContractVersion on Sontsa-prosessisopimuksen versio (pakki/docs/02).
+// ContractVersion on Jakari-prosessisopimuksen versio (pakki/docs/02).
 const ContractVersion = 1
 
 // Ldflags-arvot.

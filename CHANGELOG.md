@@ -1,10 +1,14 @@
 # Muutosloki
 
+## 0.2.1 (22.11.2026)
+
+- **Rikkova (korjaa 0.2.0:n):** sateenvarjon nimeksi tuli `jakari`, joten `contextfile`-paketin ympäristömuuttujat ovat `JAKARI_CONTEXT_FILE` ja `JAKARI_CONTRACT_VERSION`. Versio 0.2.0 (`SONTSA_*`) oli julkaistuna vain muutaman minuutin eikä ollut kenenkään käytössä; älä käytä sitä.
+
 ## 0.2.0 (22.11.2026)
 
 - **Rikkova:** kirjasto nimettiin uudelleen `kit` → `veska`; moduulipolku on `github.com/salttis/veska`.
-- **Rikkova:** `contextfile`-paketin ympäristömuuttujat ovat `SONTSA_CONTEXT_FILE` ja `SONTSA_CONTRACT_VERSION` (aiemmin `JS_*`; `js` → `sontsa`).
+- Ympäristömuuttujat nimettiin `SONTSA_*` (korvattu 0.2.1:ssä).
 
 ## 0.1.0
 
-- Ensimmäinen runko: buildinfo, output, contextfile, config, logx, ui.
+- Ensimmäinen runko: buildinfo, output, contextfile, config, logx, ui (moduulina `github.com/salttis/kit`; ympäristömuuttujat `JS_*`).
