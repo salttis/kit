@@ -2,7 +2,7 @@
 //
 // Työkalu asettaa arvot build-vaiheessa:
 //
-//	-ldflags "-X github.com/salttis/kit/buildinfo.Version=1.2.0 -X ...Commit=abc -X ...BuildTime=2026-11-22T10:00:00Z"
+//	-ldflags "-X github.com/salttis/veska/buildinfo.Version=1.2.0 -X ...Commit=abc -X ...BuildTime=2026-11-22T10:00:00Z"
 //
 // Puuttuva arvo on "unknown".
 package buildinfo
@@ -12,7 +12,7 @@ import (
 	"runtime/debug"
 )
 
-// ContractVersion on JS-prosessisopimuksen versio (js/docs/02).
+// ContractVersion on Sontsa-prosessisopimuksen versio (pakki/docs/02).
 const ContractVersion = 1
 
 // Ldflags-arvot.

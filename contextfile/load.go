@@ -1,6 +1,6 @@
-// Package contextfile lukee JS:n kontekstitiedoston (js/schemas/context.schema.json).
+// Package contextfile lukee Sontsan kontekstitiedoston (pakki/schemas/context.schema.json).
 //
-// Kontekstia ei ole pakko olla: Load palauttaa (nil, nil), kun JS_CONTEXT_FILE
+// Kontekstia ei ole pakko olla: Load palauttaa (nil, nil), kun SONTSA_CONTEXT_FILE
 // puuttuu. Annettu mutta virheellinen konteksti on aina virhe.
 package contextfile
 
@@ -13,10 +13,10 @@ import (
 	"strconv"
 )
 
-// Ympäristömuuttujat, jotka JS asettaa lapselle.
+// Ympäristömuuttujat, jotka Sontsa asettaa lapselle.
 const (
-	EnvContextFile     = "JS_CONTEXT_FILE"
-	EnvContractVersion = "JS_CONTRACT_VERSION"
+	EnvContextFile     = "SONTSA_CONTEXT_FILE"
+	EnvContractVersion = "SONTSA_CONTRACT_VERSION"
 )
 
 // SupportedContract on tuettu sopimusversio.

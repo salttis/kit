@@ -1,4 +1,4 @@
-module github.com/salttis/kit
+module github.com/salttis/veska
 
 go 1.27.0
 
