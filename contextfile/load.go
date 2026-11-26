@@ -1,6 +1,6 @@
-// Package contextfile lukee Jakarin kontekstitiedoston (pakki/schemas/context.schema.json).
+// Package contextfile lukee Komentajan kontekstitiedoston (pakki/schemas/context.schema.json).
 //
-// Kontekstia ei ole pakko olla: Load palauttaa (nil, nil), kun JAKARI_CONTEXT_FILE
+// Kontekstia ei ole pakko olla: Load palauttaa (nil, nil), kun KOMENTAJA_CONTEXT_FILE
 // puuttuu. Annettu mutta virheellinen konteksti on aina virhe.
 package contextfile
 
@@ -13,10 +13,10 @@ import (
 	"strconv"
 )
 
-// Ympäristömuuttujat, jotka Jakari asettaa lapselle.
+// Ympäristömuuttujat, jotka Komentaja asettaa lapselle.
 const (
-	EnvContextFile     = "JAKARI_CONTEXT_FILE"
-	EnvContractVersion = "JAKARI_CONTRACT_VERSION"
+	EnvContextFile     = "KOMENTAJA_CONTEXT_FILE"
+	EnvContractVersion = "KOMENTAJA_CONTRACT_VERSION"
 )
 
 // SupportedContract on tuettu sopimusversio.
@@ -44,13 +44,18 @@ type Environment struct {
 // Load lukee kontekstin ympäristömuuttujan osoittamasta tiedostosta.
 func Load() (*Context, error) {
 	path := os.Getenv(EnvContextFile)
+	versionEnv := EnvContractVersion
+	if path == "" {
+		path = os.Getenv("JAKARI_CONTEXT_FILE")
+		versionEnv = "JAKARI_CONTRACT_VERSION"
+	}
 	if path == "" {
 		return nil, nil
 	}
-	if v := os.Getenv(EnvContractVersion); v != "" {
+	if v := os.Getenv(versionEnv); v != "" {
 		n, err := strconv.Atoi(v)
 		if err != nil || n != SupportedContract {
-			return nil, fmt.Errorf("%s=%q: tuettu sopimusversio on %d", EnvContractVersion, v, SupportedContract)
+			return nil, fmt.Errorf("%s=%q: tuettu sopimusversio on %d", versionEnv, v, SupportedContract)
 		}
 	}
 	return LoadFile(path)
